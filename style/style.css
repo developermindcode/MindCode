@@ -16,9 +16,11 @@ body {
   font-size: 18px;
   color: #fff;
 }
-a{
+
+a {
   text-decoration: none;
 }
+
 /* =======================
    Background
 ======================= */
@@ -84,12 +86,12 @@ nav li a:hover,
 nav li a.active {
   color: #bffff9;
 }
-/* =======================
-   Logo – Responsive Fix
-======================= */
 
+/* =======================
+   Logo
+======================= */
 a.logo {
-  position: relative; /* بدل fixed */
+  position: relative;
   z-index: 5;
   display: inline-flex;
   align-items: center;
@@ -109,7 +111,7 @@ a.logo img {
   }
 }
 
-/* Desktop فقط لو عايزة اللوجو fixed */
+/* Fixed logo على الديسكتوب */
 @media (min-width: 992px) {
   a.logo.fixed {
     position: fixed;
@@ -133,9 +135,11 @@ header button,
   cursor: pointer;
   transition: all 0.3s ease;
 }
-header button a{
+
+header button a {
   color: #ecf0f7;
-} 
+}
+
 header button:hover,
 .hero-box button:hover {
   filter: brightness(1.12);
@@ -248,7 +252,6 @@ header button:hover,
   font-size: 30px;
 }
 
-
 /* =======================
    Mindset Map
 ======================= */
@@ -317,11 +320,10 @@ header button:hover,
   transform: translateY(-6px);
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
-/*  */
+
 /* =======================
    Micro Challenges
 ======================= */
-
 .micro-challenges {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -380,7 +382,6 @@ header button:hover,
 /* =======================
    Thinking Blog (Brainstorm)
 ======================= */
-
 .thinking-blog {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -511,8 +512,33 @@ header button:hover,
   opacity: 0.6;
 }
 
-/* Responsive */
+/* =======================
+   Responsive Media Queries
+======================= */
 @media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-box#main h1 {
+    font-size: clamp(32px, 6vw, 60px);
+  }
+
+  .special-heading {
+    font-size: clamp(36px, 7vw, 80px);
+  }
+
+  .hero-box img {
+    max-width: 100%;
+    height: auto;
+  }
+
   .footer-container {
     grid-template-columns: 1fr;
     text-align: center;
@@ -523,10 +549,6 @@ header button:hover,
   }
 }
 
-
-/* =======================
-   Responsive Media
-======================= */
 @media (min-width: 768px) {
   .container {
     width: 750px;
@@ -566,32 +588,3 @@ header button:hover,
   }
 }
 
-
-
-
-
-@media (max-width: 768px) {
-  header .container {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  nav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-.hero-box#main h1 {
-  font-size: clamp(32px, 6vw, 60px);
-}
-.special-heading {
-  font-size: 60px;
-}
-.special-heading {
-  font-size: clamp(36px, 7vw, 80px);
-}
-.hero-box img {
-  max-width: 100%;
-  height: auto;
-}
-
-}
