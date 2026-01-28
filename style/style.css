@@ -87,6 +87,7 @@ nav li a.active {
   color: #bffff9;
 }
 
+
 /* =======================
    Logo
 ======================= */
@@ -139,7 +140,9 @@ header button,
 header button a {
   color: #ecf0f7;
 }
-
+header button{
+  margin-right: 62px;
+}
 header button:hover,
 .hero-box button:hover {
   filter: brightness(1.12);
@@ -516,11 +519,16 @@ header button:hover,
    Responsive Media Queries
 ======================= */
 @media (max-width: 768px) {
-  header .container {
-    flex-direction: column;
-    gap: 15px;
+  header {
+    margin: 0px;
+    padding: 40px 5px;
   }
+   .container nav li a {
 
+    padding: 5px;
+  }
+  header button{
+    display: none;}
   nav {
     flex-wrap: wrap;
     justify-content: center;
