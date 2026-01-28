@@ -1,0 +1,597 @@
+/* =======================
+   Reset
+======================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: #0B0F1A;
+  overflow-x: hidden;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  color: #fff;
+}
+a{
+  text-decoration: none;
+}
+/* =======================
+   Background
+======================= */
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 75% 25%, rgba(63, 175, 142, 0.18), transparent 45%),
+    radial-gradient(circle at 25% 75%, rgba(47, 109, 179, 0.22), transparent 50%),
+    linear-gradient(135deg, #0B0F1A, #121733);
+}
+
+.bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 60% at 50% 100%, rgba(47, 109, 179, 0.25), transparent 65%);
+}
+
+/* =======================
+   Container
+======================= */
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =======================
+   Header
+======================= */
+header {
+  padding: 20px;
+  margin: 40px 30px;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 97px;
+}
+
+nav {
+  display: flex;
+  gap: 15px;
+}
+
+nav li {
+  list-style: none;
+}
+
+nav li a {
+  color: #c3d2e9;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+nav li a:hover,
+nav li a.active {
+  color: #bffff9;
+}
+/* =======================
+   Logo – Responsive Fix
+======================= */
+
+a.logo {
+  position: relative; /* بدل fixed */
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+}
+
+a.logo img {
+  width: 60px;
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+/* Hover فقط للأجهزة اللي فيها ماوس */
+@media (hover: hover) {
+  a.logo:hover img {
+    transform: scale(1.1);
+  }
+}
+
+/* Desktop فقط لو عايزة اللوجو fixed */
+@media (min-width: 992px) {
+  a.logo.fixed {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+  }
+}
+
+/* =======================
+   Buttons
+======================= */
+header button,
+.hero-box button {
+  background: linear-gradient(135deg, #3FAF8E, #2F6DB3);
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+header button a{
+  color: #ecf0f7;
+} 
+header button:hover,
+.hero-box button:hover {
+  filter: brightness(1.12);
+  transform: translateY(-2px);
+}
+
+/* =======================
+   Hero Section
+======================= */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.hero-box#main {
+  height: 295px;
+  text-align: center;
+}
+
+.hero-box#main h1 {
+  font-size: 60px;
+  background: linear-gradient(90deg, #3FAF8E, #2F6DB3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-box#main p {
+  font-size: 22px;
+  color: #C7D6EE;
+  margin-top: 10px;
+}
+
+/* =======================
+   Courses Cards
+======================= */
+.courses {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  padding: 20px 0;
+  margin: 50px 0;
+}
+
+.hero-box {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  margin: 12px;
+  flex-grow: 1;
+  flex-basis: 100%;
+  transition: all 0.3s ease;
+}
+
+.hero-box img {
+  width: 80%;
+  margin-bottom: 20px;
+  object-fit: cover;
+}
+
+.hero-box h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, #3FAF8E, #2F6DB3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-box p {
+  font-size: 16px;
+  color: #C7D6EE;
+  margin-bottom: 20px;
+}
+
+/* =======================
+   Headings
+======================= */
+.special-heading {
+  margin-bottom: 10px;
+  color: #a5d1bd57;
+  font-size: 60px;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.special-heading + p {
+  margin: -20px 0 30px;
+  font-size: 18px;
+  text-align: center;
+  color: #C7D6EE;
+}
+
+/* =======================
+   Blog
+======================= */
+.blog {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #C7D6EE;
+  font-size: 30px;
+}
+
+
+/* =======================
+   Mindset Map
+======================= */
+.mindset-map {
+  position: relative;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.mindset-center {
+  background: linear-gradient(135deg, #3FAF8E, #2F6DB3);
+  width: 260px;
+  height: 260px;
+  margin: 0 auto 60px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 0 60px rgba(79, 209, 197, 0.4);
+}
+
+.mindset-center h2 {
+  font-size: 32px;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.mindset-center p {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.mindset-nodes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.mind-node {
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(15px);
+  border-radius: 18px;
+  padding: 30px 20px;
+  transition: 0.3s;
+}
+
+.mind-node i {
+  font-size: 30px;
+  color: #4fd1c5;
+  margin-bottom: 15px;
+}
+
+.mind-node h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.mind-node p {
+  font-size: 14px;
+  color: #C7D6EE;
+}
+
+.mind-node:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+/*  */
+/* =======================
+   Micro Challenges
+======================= */
+
+.micro-challenges {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 70px 0;
+}
+
+.challenge-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 22px;
+  padding: 30px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: 0.3s;
+}
+
+.challenge-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+}
+
+.challenge-tag {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 12px;
+  color: #4fd1c5;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.challenge-card h3 {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.challenge-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 18px;
+}
+
+.challenge-card ul li {
+  font-size: 15px;
+  color: #C7D6EE;
+  margin-bottom: 8px;
+}
+
+.challenge-note {
+  font-size: 13px;
+  color: #9fbad6;
+  font-style: italic;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 12px;
+}
+
+/* =======================
+   Thinking Blog (Brainstorm)
+======================= */
+
+.thinking-blog {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin: 60px 0;
+}
+
+.think-card {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(16px);
+  border-radius: 22px;
+  padding: 30px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: 0.3s;
+}
+
+.think-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.4);
+}
+
+.think-card h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #9ae6b4;
+}
+
+.situation {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.thinking {
+  margin-bottom: 15px;
+  padding: 15px 18px;
+  border-radius: 14px;
+  font-size: 14px;
+}
+
+.thinking span {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.thinking.wrong {
+  background: rgba(255, 80, 80, 0.12);
+  border-left: 4px solid #ff6b6b;
+}
+
+.thinking.right {
+  background: rgba(63, 175, 142, 0.15);
+  border-left: 4px solid #3FAF8E;
+}
+
+.thinking p {
+  color: #C7D6EE;
+  line-height: 1.6;
+}
+
+/* =======================
+   Footer
+======================= */
+.footer {
+  background: linear-gradient(135deg, #0b0f1a, #0f1c2e);
+  color: #d6e6f2;
+  padding: 60px 8% 20px;
+  font-family: "Cairo", sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 1.2fr 1.5fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer h2 {
+  font-size: 28px;
+  color: #4fd1c5;
+}
+
+.footer h3 {
+  margin-bottom: 15px;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.footer p {
+  font-size: 14px;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+.tagline {
+  margin-top: 10px;
+  font-style: italic;
+  color: #9ae6b4;
+}
+
+/* Links */
+.footer-links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #d6e6f2;
+  text-decoration: none;
+  margin-bottom: 12px;
+  transition: 0.3s;
+}
+
+.footer-links a i {
+  color: #4fd1c5;
+}
+
+.footer-links a:hover {
+  transform: translateX(6px);
+  color: #4fd1c5;
+}
+
+/* Bottom */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 15px;
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-links a {
+    justify-content: center;
+  }
+}
+
+
+/* =======================
+   Responsive Media
+======================= */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+
+  .hero-box {
+    flex-basis: calc(50% - 24px);
+    padding: 35px;
+  }
+
+  .hero-box h2 {
+    font-size: 30px;
+  }
+
+  .hero-box p {
+    font-size: 16px;
+  }
+
+  .special-heading {
+    font-size: 80px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+
+  .hero-box {
+    flex-basis: calc(33.333% - 24px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+.hero-box#main h1 {
+  font-size: clamp(32px, 6vw, 60px);
+}
+.special-heading {
+  font-size: 60px;
+}
+.special-heading {
+  font-size: clamp(36px, 7vw, 80px);
+}
+.hero-box img {
+  max-width: 100%;
+  height: auto;
+}
+
+}
