@@ -20,6 +20,9 @@ body {
 a {
   text-decoration: none;
 }
+li{
+  list-style: none;
+}
 
 /* =======================
    Background
@@ -210,7 +213,7 @@ header button:hover,
   object-fit: cover;
 }
 
-.hero-box h2 {
+.hero-box h2  {
   font-size: 28px;
   margin-bottom: 15px;
   background: linear-gradient(90deg, #3FAF8E, #2F6DB3);
@@ -227,22 +230,32 @@ header button:hover,
 /* =======================
    Headings
 ======================= */
+
 .special-heading {
   margin-bottom: 10px;
-  color: #a5d1bd57;
-  font-size: 60px;
+  color:#a5d1bd57;
+  font-size: 100px;
   text-align: center;
   font-weight: 800;
-  letter-spacing: -2px;
+  letter-spacing: -3px;
+  margin: 0;
 }
-
 .special-heading + p {
-  margin: -20px 0 30px;
-  font-size: 18px;
+  margin: -30px 0 0;
+  font-size: 20px;
   text-align: center;
-  color: #C7D6EE;
+  color:#C7D6EE;
 }
-
+@media (max-width: 767px) {
+  .special-heading {
+    font-size: 60px;
+    
+  }
+  .special-heading + p {
+    margin-top: -20px;
+  
+  }
+}
 /* =======================
    Blog
 ======================= */
@@ -324,63 +337,7 @@ header button:hover,
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
-/* =======================
-   Micro Challenges
-======================= */
-.micro-challenges {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin: 70px 0;
-}
 
-.challenge-card {
-  background: rgba(255,255,255,0.05);
-  border-radius: 22px;
-  padding: 30px;
-  border: 1px solid rgba(255,255,255,0.08);
-  transition: 0.3s;
-}
-
-.challenge-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
-}
-
-.challenge-tag {
-  display: inline-block;
-  margin-bottom: 12px;
-  font-size: 12px;
-  color: #4fd1c5;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.challenge-card h3 {
-  font-size: 18px;
-  line-height: 1.5;
-  margin-bottom: 20px;
-}
-
-.challenge-card ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 18px;
-}
-
-.challenge-card ul li {
-  font-size: 15px;
-  color: #C7D6EE;
-  margin-bottom: 8px;
-}
-
-.challenge-note {
-  font-size: 13px;
-  color: #9fbad6;
-  font-style: italic;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  padding-top: 12px;
-}
 
 /* =======================
    Thinking Blog (Brainstorm)
@@ -538,9 +495,10 @@ header button:hover,
     font-size: clamp(32px, 6vw, 60px);
   }
 
-  .special-heading {
-    font-size: clamp(36px, 7vw, 80px);
-  }
+
+    .special-heading {
+        font-size: clamp(65px, 15vw, 10px);
+    }
 
   .hero-box img {
     max-width: 100%;
@@ -595,4 +553,3 @@ header button:hover,
     width: 1170px;
   }
 }
-
