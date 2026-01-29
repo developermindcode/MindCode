@@ -1,0 +1,18 @@
+ul.goals {
+    text-align: left;
+    line-height: 1.5;
+}
+li{
+    margin-bottom: 13px;
+}
+.det h4{
+  font-size: 27px;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, #3FAF8E, #2F6DB3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.courses {
+    padding: 0;
+    margin: 0;
+}
